@@ -1,4 +1,4 @@
-import { Apple, Drone, Pencil } from '../icons/Icons';
+import { Apple, Drone, Pencil } from '../components/icons/Icons';
 
 const malfucntionsTypes = [
     {
