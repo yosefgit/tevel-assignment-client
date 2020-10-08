@@ -1,0 +1,17 @@
+.malfunction-card {
+    height: 30vh;
+    background: white;
+    width: 30%;
+    margin: 1vh;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding-top: 1.3em;
+}
+
+.malfunction-card:hover {
+    cursor: pointer;
+}
+
+.card-text {
+    margin-top: 0;
+}
