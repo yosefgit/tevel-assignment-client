@@ -20,6 +20,7 @@
     padding: 1vh;
     border-radius: 20px;  
     background: #a4cce2;
+    border: 2px solid #2d2d2d;
 }
 
 .popup-header {
