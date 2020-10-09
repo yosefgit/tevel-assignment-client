@@ -1,6 +1,6 @@
 import { Apple, Drone, Pencil } from '../components/icons/Icons';
 
-const malfucntionsTypes = [
+const MalfucntionsTypes = [
     {
         type: "drone_crashed",
         text: "Drone crashed",
@@ -18,4 +18,4 @@ const malfucntionsTypes = [
     }
 ]
 
-export default malfucntionsTypes;
+export default MalfucntionsTypes;

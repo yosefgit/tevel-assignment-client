@@ -1,32 +1,34 @@
 import React, { useState} from 'react';
-import MalfunctionTypes from '../../types/MalfunctionTypes';
 import MalfunctionReport from '../malfunctionReport/MalfunctionReport';
 import MalfunctionReportPopup from '../malfunctionReportPopup/MalfunctionReportPopup';
 import axios from 'axios';
 import config from '../../config';
+import { NotificationManager } from 'react-notifications';
 import './malfunctionsContainer.css';
-
-import { NotificationManager } from 'react-notifications'
 
 const reportMalfunction = type => {
     axios.post(`${config.serverBaseUrl}/report`, {malfunctionType: type}).then(res => {
         NotificationManager.success(type, 'Malfunction reported:')
     }, err => {
         NotificationManager.error('faild to report malfunction', 'Something went wrong')
-    } )
+    })
 }
 
-const MalfunctionsContainer = function() {
+const MalfunctionsContainer = function({ malfunctionTypes }) {
     const [ showPopup, setShowPopup ] = useState(false);
 
     const togglePopup = () => {
         setShowPopup(!showPopup)
     }
 
+    if(!malfunctionTypes || !malfunctionTypes.length){
+        return <div>No malfunction types found</div>
+    }
+
     return (
         <div className="container">
             {   
-                MalfunctionTypes.map((malfunctionType, i) => {
+                malfunctionTypes.map((malfunctionType, i) => {
                     return (    
                         <MalfunctionReport 
                             text={malfunctionType.text}
